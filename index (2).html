@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harold Hennaths IA — Growth Partner en Inteligencia Artificial</title>
+<meta name="description" content="Growth Partner especializado en Inteligencia Artificial, Automatización, CRO, CRM, Meta Ads y SEO GEO para escalar tu empresa.">
+
+<!-- Open Graph / social sharing preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Harold Hennaths IA — Growth Partner en Inteligencia Artificial">
+<meta property="og:description" content="Sistemas de IA, automatización, CRM y Meta Ads para empresas en Medellín y Colombia. Diagnóstico IA gratuito.">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Structured data: helps both traditional search engines and AI answer
+     engines (ChatGPT, Gemini, Perplexity, Claude) understand who this is. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Harold Hennaths IA",
+  "description": "Growth Partner especializado en Inteligencia Artificial, automatización, CRM, Meta Ads, CRO y SEO GEO para pymes y empresarios.",
+  "areaServed": "Medellín, Colombia",
+  "telephone": "+573103643877",
+  "sameAs": ["https://www.instagram.com/haroldhennaths.ia"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --verde: #1E2B14;
+  --verde-deep: #10190C;
+  --dorado: #C8A84B;
+  --dorado-bright: #F0D18C;
+  --negro: #050803;
+  --blanco: #F7F6F1;
+  --blanco-dim: rgba(247,246,241,0.62);
+  --blanco-faint: rgba(247,246,241,0.32);
+  --glass-bg: rgba(20, 28, 14, 0.42);
+  --glass-border: rgba(200,168,75,0.22);
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --ease: cubic-bezier(.16,.84,.44,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--negro);
+  color:var(--blanco);
+  font-family:var(--font-body);
+  overflow-x:hidden;
+  min-height:100vh;
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+}
+
+::selection{background:var(--dorado); color:var(--negro);}
+
+a{color:inherit; text-decoration:none;}
+button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit;}
+ul{list-style:none;}
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--dorado);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.eyebrow::before{
+  content:'';
+  width:22px; height:1px;
+  background:var(--dorado);
+}
+
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; letter-spacing:-0.01em; line-height:1.08;}
+
+.section{
+  position:relative;
+  z-index:2;
+  padding:min(14vw,140px) 6vw;
+  max-width:1400px;
+  margin:0 auto;
+}
+.section-head{max-width:680px; margin-bottom:56px;}
+.section-head h2{font-size:clamp(2rem,4.2vw,3.4rem); margin-top:14px;}
+.section-head p{color:var(--blanco-dim); font-size:1.05rem; margin-top:18px; line-height:1.6;}
+
+/* ============ 3D BACKGROUND ============ */
+#brain-canvas{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(30,43,20,0.55) 0%, transparent 60%),
+    var(--negro);
+}
+.grain{
+  position:fixed; inset:0; z-index:1; pointer-events:none;
+  opacity:0.035; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============ HEADER ============ */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 6vw;
+  transition:all 0.4s var(--ease);
+}
+header.scrolled{
+  background:var(--glass-bg);
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid var(--glass-border);
+  padding:12px 6vw;
+}
+.logo{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.15rem;
+  letter-spacing:0.02em;
+}
+.logo span{color:var(--dorado);}
+
+nav.desktop-nav{display:flex; gap:34px;}
+nav.desktop-nav button{
+  font-family:var(--font-mono);
+  font-size:0.76rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--blanco-dim);
+  transition:color 0.25s;
+  position:relative;
+}
+nav.desktop-nav button:hover{color:var(--dorado);}
+nav.desktop-nav button::after{
+  content:'';
+  position:absolute; bottom:-6px; left:0;
+  width:0%; height:1px; background:var(--dorado);
+  transition:width 0.3s var(--ease);
+}
+nav.desktop-nav button:hover::after{width:100%;}
+
+.header-actions{display:flex; align-items:center; gap:14px;}
+.btn{
+  font-family:var(--font-mono);
+  font-size:0.74rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  padding:11px 22px;
+  border-radius:100px;
+  transition:all 0.3s var(--ease);
+  display:inline-flex; align-items:center; gap:8px;
+  white-space:nowrap;
+}
+.btn-gold{
+  background:linear-gradient(135deg, var(--dorado-bright), var(--dorado));
+  color:var(--negro);
+  font-weight:600;
+}
+.btn-gold:hover{transform:translateY(-2px); box-shadow:0 12px 30px rgba(200,168,75,0.32);}
+.btn-ghost{
+  border:1px solid var(--glass-border);
+  color:var(--blanco);
+  background:rgba(255,255,255,0.03);
+}
+.btn-ghost:hover{border-color:var(--dorado); background:rgba(200,168,75,0.08);}
+
+.menu-toggle{display:none; font-size:1.4rem; color:var(--blanco);}
+
+@media (max-width:980px){
+  nav.desktop-nav, .header-actions .btn-ghost-label{display:none;}
+  .menu-toggle{display:block;}
+}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100vh;
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
+  padding:110px 6vw 0;
+  position:relative; z-index:2;
+}
+.hero-inner{max-width:820px;}
+.hero h1{
+  font-size:clamp(2.6rem, 6.4vw, 5.4rem);
+  margin-top:22px;
+  background:linear-gradient(120deg, var(--blanco) 40%, var(--dorado-bright) 90%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero p.lead{
+  font-size:clamp(1.05rem,1.7vw,1.3rem);
+  color:var(--blanco-dim);
+  max-width:620px;
+  margin-top:26px;
+  line-height:1.65;
+}
+.hero-ctas{display:flex; gap:16px; margin-top:44px; flex-wrap:wrap;}
+.hero-ctas .btn{padding:15px 30px; font-size:0.8rem;}
+.hero-stats{
+  display:flex; gap:48px; margin-top:80px;
+  padding-top:32px; border-top:1px solid var(--glass-border);
+  flex-wrap:wrap;
+}
+.hero-stat .num{font-family:var(--font-display); font-size:2rem; color:var(--dorado-bright); font-weight:700;}
+.hero-stat .label{font-family:var(--font-mono); font-size:0.7rem; color:var(--blanco-faint); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;}
+
+.scroll-cue{
+  position:absolute; bottom:36px; left:6vw;
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.1em;
+  color:var(--blanco-faint); text-transform:uppercase;
+}
+.scroll-cue .line{width:1px; height:34px; background:linear-gradient(var(--dorado), transparent); animation:scrollpulse 2.2s infinite;}
+@keyframes scrollpulse{0%{opacity:0.2} 50%{opacity:1} 100%{opacity:0.2}}
+
+/* ============ CARDS GRID ============ */
+.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(270px,1fr)); gap:18px;}
+.card{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(14px);
+  border-radius:18px;
+  padding:30px 26px;
+  cursor:pointer;
+  transition:all 0.4s var(--ease);
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:'';
+  position:absolute; inset:0;
+  background:radial-gradient(circle at 30% 0%, rgba(200,168,75,0.14), transparent 60%);
+  opacity:0; transition:opacity 0.4s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(200,168,75,0.5);
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
+.card:hover::before{opacity:1;}
+.card .idx{font-family:var(--font-mono); font-size:0.7rem; color:var(--dorado); letter-spacing:0.08em;}
+.card h3{font-size:1.2rem; margin-top:16px;}
+.card p{color:var(--blanco-dim); font-size:0.92rem; margin-top:10px; line-height:1.55;}
+.card .arrow{margin-top:20px; color:var(--dorado); font-family:var(--font-mono); font-size:0.78rem; display:flex; align-items:center; gap:6px; transition:gap 0.3s;}
+.card:hover .arrow{gap:12px;}
+
+/* ============ PROCESS TIMELINE ============ */
+.timeline{display:flex; flex-direction:column; border-left:1px solid var(--glass-border); margin-left:10px;}
+.tl-step{
+  position:relative; padding:0 0 52px 40px;
+  opacity:0.35; transition:opacity 0.6s var(--ease);
+}
+.tl-step.in-view{opacity:1;}
+.tl-step::before{
+  content:'';
+  position:absolute; left:-6px; top:2px;
+  width:11px; height:11px; border-radius:50%;
+  background:var(--negro); border:2px solid var(--dorado);
+  transition:all 0.5s var(--ease);
+}
+.tl-step.in-view::before{background:var(--dorado); box-shadow:0 0 16px rgba(200,168,75,0.7);}
+.tl-step .tl-num{font-family:var(--font-mono); color:var(--dorado); font-size:0.75rem; letter-spacing:0.1em;}
+.tl-step h4{font-size:1.35rem; margin-top:8px;}
+.tl-step p{color:var(--blanco-dim); margin-top:8px; max-width:520px; line-height:1.6; font-size:0.95rem;}
+
+/* ============ RESULTS ============ */
+.results-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; margin-top:10px;}
+.contact-map{
+  margin-top:40px; border:1px solid var(--glass-border); border-radius:18px;
+  background:var(--glass-bg); backdrop-filter:blur(14px);
+  padding:34px 32px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+}
+.results-note{
+  margin-top:32px; padding:24px 28px; border:1px solid var(--glass-border);
+  border-radius:16px; background:rgba(200,168,75,0.05); max-width:760px;
+}
+.results-note p{color:var(--blanco-dim); font-size:0.92rem; line-height:1.6;}
+.results-note strong{color:var(--dorado-bright);}
+.map-pin{font-size:2.2rem; line-height:1;}
+.map-text{flex:1; min-width:220px;}
+.map-text h4{font-size:1.3rem;}
+.result-box{
+  border:1px solid var(--glass-border); border-radius:16px; padding:28px 22px;
+  background:linear-gradient(160deg, rgba(200,168,75,0.06), transparent);
+  text-align:left;
+}
+.result-box .counter{font-family:var(--font-display); font-size:2.6rem; font-weight:700; color:var(--dorado-bright);}
+.result-box .label{color:var(--blanco-dim); font-size:0.88rem; margin-top:8px;}
+
+/* ============ SEO/GEO ============ */
+.geo-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:34px;}
+.geo-item{
+  border:1px solid var(--glass-border); border-radius:14px; padding:20px;
+  font-family:var(--font-mono); font-size:0.85rem; color:var(--blanco-dim);
+  display:flex; align-items:center; gap:12px;
+}
+.geo-item::before{content:'◆'; color:var(--dorado); font-size:0.7rem;}
+
+/* ============ DIAGNOSTIC FORM ============ */
+.diag-form{
+  background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:22px;
+  padding:44px; backdrop-filter:blur(16px); margin-top:20px;
+}
+.diag-progress{display:flex; gap:6px; margin-bottom:36px;}
+.diag-progress span{flex:1; height:3px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;}
+.diag-progress span i{display:block; height:100%; width:0%; background:var(--dorado); transition:width 0.4s var(--ease);}
+.diag-step{display:none;}
+.diag-step.active{display:block; animation:fadein 0.5s var(--ease);}
+@keyframes fadein{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+.field-row{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;}
+@media(max-width:640px){.field-row{grid-template-columns:1fr;}}
+.field{display:flex; flex-direction:column; gap:8px;}
+.field label{font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--dorado);}
+.field input, .field select, .field textarea{
+  background:rgba(255,255,255,0.04); border:1px solid var(--glass-border);
+  border-radius:10px; padding:13px 15px; color:var(--blanco); font-family:var(--font-body); font-size:0.92rem;
+  transition:border-color 0.25s;
+}
+.field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--dorado);}
+.field textarea{resize:vertical; min-height:90px;}
+.diag-nav{display:flex; justify-content:space-between; margin-top:30px;}
+.diag-success{text-align:center; padding:40px 0;}
+.diag-success h3{font-size:1.6rem; margin-bottom:12px;}
+
+/* ============ MODALS (SPA behavior) ============ */
+.modal-overlay{
+  position:fixed; inset:0; z-index:1000;
+  background:rgba(5,8,3,0.55);
+  backdrop-filter:blur(4px);
+  display:flex; align-items:center; justify-content:center;
+  padding:5vh 4vw;
+  opacity:0; visibility:hidden;
+  transition:opacity 0.35s var(--ease), visibility 0.35s;
+}
+.modal-overlay.open{opacity:1; visibility:visible;}
+.modal-panel{
+  width:min(760px, 100%);
+  max-height:88vh; overflow-y:auto;
+  background:rgba(16,25,12,0.62);
+  border:1px solid var(--glass-border);
+  border-radius:24px;
+  backdrop-filter:blur(30px) saturate(160%);
+  -webkit-backdrop-filter:blur(30px) saturate(160%);
+  padding:48px;
+  transform:translateY(24px) scale(0.98);
+  transition:transform 0.4s var(--ease);
+  box-shadow:0 40px 90px rgba(0,0,0,0.5);
+}
+.modal-overlay.open .modal-panel{transform:translateY(0) scale(1);}
+.modal-close{
+  position:absolute; top:28px; right:28px;
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--glass-border);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--blanco); font-size:1rem;
+  transition:all 0.25s;
+}
+.modal-close:hover{background:var(--dorado); color:var(--negro); border-color:var(--dorado);}
+.modal-panel .eyebrow{margin-bottom:14px;}
+.modal-panel h2{font-size:2rem; margin-bottom:18px;}
+.modal-panel p{color:var(--blanco-dim); line-height:1.7; margin-bottom:14px;}
+
+/* ============ FLOATING WHATSAPP ============ */
+.fab-whatsapp{
+  position:fixed; bottom:28px; left:28px; z-index:90;
+  width:60px; height:60px; border-radius:50%;
+  background:linear-gradient(135deg,#2ea55f,#1c8a48);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 0 0 rgba(46,165,95,0.6);
+  animation:glowpulse 2.6s infinite;
+}
+@keyframes glowpulse{
+  0%{box-shadow:0 0 0 0 rgba(46,165,95,0.5);}
+  70%{box-shadow:0 0 0 16px rgba(46,165,95,0);}
+  100%{box-shadow:0 0 0 0 rgba(46,165,95,0);}
+}
+.fab-whatsapp svg{width:28px; height:28px; fill:white;}
+
+/* ============ CHATBOT ============ */
+.chatbot-fab{
+  position:fixed; bottom:28px; right:28px; z-index:90;
+  width:60px; height:60px; border-radius:50%;
+  background:linear-gradient(135deg, var(--dorado-bright), var(--dorado));
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 8px 30px rgba(200,168,75,0.4);
+  transition:transform 0.3s;
+}
+.chatbot-fab:hover{transform:scale(1.08);}
+.chatbot-fab svg{width:26px; height:26px;}
+.chat-window{
+  position:fixed; bottom:100px; right:28px; z-index:91;
+  width:min(360px, 90vw); height:min(480px,70vh);
+  background:rgba(16,25,12,0.72); border:1px solid var(--glass-border);
+  border-radius:20px; backdrop-filter:blur(24px);
+  display:flex; flex-direction:column; overflow:hidden;
+  opacity:0; visibility:hidden; transform:translateY(16px);
+  transition:all 0.35s var(--ease);
+}
+.chat-window.open{opacity:1; visibility:visible; transform:translateY(0);}
+.chat-header{padding:16px 20px; border-bottom:1px solid var(--glass-border); font-family:var(--font-mono); font-size:0.8rem; display:flex; justify-content:space-between; align-items:center;}
+.chat-body{flex:1; overflow-y:auto; padding:16px 20px; display:flex; flex-direction:column; gap:12px;}
+.chat-msg{max-width:82%; padding:10px 14px; border-radius:14px; font-size:0.86rem; line-height:1.5;}
+.chat-msg.bot{background:rgba(255,255,255,0.06); align-self:flex-start; border:1px solid var(--glass-border);}
+.chat-msg.user{background:var(--dorado); color:var(--negro); align-self:flex-end;}
+.chat-input-row{display:flex; border-top:1px solid var(--glass-border); padding:10px;}
+.chat-input-row input{flex:1; background:transparent; border:none; color:var(--blanco); padding:10px; font-family:var(--font-body); font-size:0.86rem;}
+.chat-input-row input:focus{outline:none;}
+.chat-input-row button{color:var(--dorado); font-weight:600; font-family:var(--font-mono); font-size:0.75rem; padding:0 12px;}
+
+/* ============ FOOTER ============ */
+footer{
+  position:relative; z-index:2; padding:60px 6vw 40px; border-top:1px solid var(--glass-border);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;
+  font-family:var(--font-mono); font-size:0.75rem; color:var(--blanco-faint);
+}
+
+/* mobile menu */
+.mobile-menu{
+  position:fixed; inset:0; z-index:99; background:rgba(5,8,3,0.96);
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:26px;
+  padding:6vw; opacity:0; visibility:hidden; transition:all 0.35s var(--ease);
+}
+.mobile-menu.open{opacity:1; visibility:visible;}
+.mobile-menu button{font-family:var(--font-display); font-size:1.6rem;}
+.mobile-menu .modal-close{position:fixed;}
+
+@media(max-width:640px){
+  .modal-panel{padding:30px 22px;}
+  .section{padding:90px 6vw;}
+}
+</style>
+</head>
+<body>
+
+<canvas id="brain-canvas"></canvas>
+<div class="grain"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="site-header">
+  <div class="logo">HAROLD <span>HENNATHS</span></div>
+  <nav class="desktop-nav">
+    <button data-modal="servicios">Servicios</button>
+    <button data-modal="industrias">Industrias</button>
+    <button data-modal="geo-nav">SEO / GEO</button>
+    <button data-modal="proceso-nav">Proceso</button>
+    <button data-modal="resultados-nav">Resultados</button>
+    <button data-modal="recursos">Recursos</button>
+    <button data-modal="blog-nav">Blog</button>
+    <button data-modal="sobre-mi">Sobre mí</button>
+  </nav>
+  <div class="header-actions">
+    <button class="btn btn-ghost btn-ghost-label" data-modal="diagnostico">Diagnóstico IA</button>
+    <a class="btn btn-gold" href="https://wa.me/573103643877?text=Hola%20Harold%2C%20quiero%20conocer%20c%C3%B3mo%20la%20Inteligencia%20Artificial%20puede%20ayudar%20a%20crecer%20mi%20empresa.%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20estrat%C3%A9gico." target="_blank">WhatsApp</a>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="modal-close" id="mobile-menu-close">✕</button>
+  <button data-modal="servicios">Servicios</button>
+  <button data-modal="industrias">Industrias</button>
+  <button data-modal="geo-nav">SEO / GEO</button>
+  <button data-modal="proceso-nav">Proceso</button>
+  <button data-modal="resultados-nav">Resultados</button>
+  <button data-modal="recursos">Recursos</button>
+  <button data-modal="blog-nav">Blog</button>
+  <button data-modal="sobre-mi">Sobre mí</button>
+  <button data-modal="diagnostico">Diagnóstico IA</button>
+  <button data-modal="contacto">Contacto</button>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Growth Partner · IA & Automatización</div>
+    <h1>Tu empresa, pensando como una máquina de crecimiento.</h1>
+    <p class="lead">Diseño e implemento sistemas de Inteligencia Artificial, automatización y adquisición que convierten tu operación en una plataforma que vende, responde y escala sola — sin que tengas que estar detrás de cada proceso.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="https://wa.me/573103643877?text=Hola%20Harold%2C%20quiero%20conocer%20c%C3%B3mo%20la%20Inteligencia%20Artificial%20puede%20ayudar%20a%20crecer%20mi%20empresa.%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20estrat%C3%A9gico." target="_blank">Hablar por WhatsApp</a>
+      <button class="btn btn-ghost" data-modal="diagnostico">Iniciar Diagnóstico IA</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" data-count="14">0</div><div class="label">Sistemas implementados</div></div>
+      <div class="hero-stat"><div class="num" data-count="3.2" data-suffix="x">0</div><div class="label">ROI promedio en Ads</div></div>
+      <div class="hero-stat"><div class="num" data-count="60" data-suffix="%">0</div><div class="label">Reducción en tiempo operativo</div></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><div class="line"></div>Desplázate</div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="section" id="servicios-section">
+  <div class="section-head">
+    <div class="eyebrow">Qué construyo</div>
+    <h2>Un stack completo de crecimiento con IA</h2>
+    <p>Cada tarjeta es un sistema real que puedo diseñar e implementar en tu operación. Haz clic para ver el detalle.</p>
+  </div>
+  <div class="grid" id="services-grid"></div>
+</section>
+
+<!-- ============ INDUSTRIAS ============ -->
+<section class="section" id="industrias-section">
+  <div class="section-head">
+    <div class="eyebrow">Para quién</div>
+    <h2>Sectores donde ya he implementado</h2>
+    <p>La automatización no es genérica — cada industria tiene sus propios cuellos de botella.</p>
+  </div>
+  <div class="grid" id="industries-grid"></div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="section" id="proceso-section">
+  <div class="section-head">
+    <div class="eyebrow">Cómo trabajamos</div>
+    <h2>Un método, ocho etapas, cero ambigüedad</h2>
+    <p>El mismo proceso que uso con cada cliente, de diagnóstico a escalamiento.</p>
+  </div>
+  <div class="timeline" id="process-timeline"></div>
+</section>
+
+<!-- ============ RESULTADOS ============ -->
+<section class="section" id="resultados-section">
+  <div class="section-head">
+    <div class="eyebrow">Resultados</div>
+    <h2>Números, no promesas</h2>
+    <p>Antes y después de implementar sistemas de IA y automatización.</p>
+  </div>
+  <div class="results-grid" id="results-grid"></div>
+  <div class="results-note">
+    <p><strong>Cómo trabajo los resultados:</strong> cada proyecto arranca con una línea base clara (tiempos de respuesta, tasa de conversión, horas operativas actuales) antes de automatizar nada. Así, cada número que te muestro después se puede comparar directamente contra tu propia operación — no contra un promedio genérico de la industria.</p>
+  </div>
+</section>
+
+<!-- ============ SEO / GEO ============ -->
+<section class="section" id="geo-section">
+  <div class="section-head">
+    <div class="eyebrow">Posicionamiento de nueva generación</div>
+    <h2>SEO Local + GEO: que te encuentren personas y modelos de IA</h2>
+    <p>Ya no basta con posicionarte en Google. Tus clientes le preguntan a ChatGPT, Gemini, Perplexity y Claude — y también hay que aparecer ahí.</p>
+  </div>
+  <div class="grid" id="geo-grid"></div>
+</section>
+
+<!-- ============ RECURSOS ============ -->
+<section class="section" id="recursos-section">
+  <div class="section-head">
+    <div class="eyebrow">Centro de recursos</div>
+    <h2>Guías, casos y plantillas</h2>
+    <p>Todo lo que necesitas saber antes de automatizar tu empresa.</p>
+  </div>
+  <div class="grid" id="resources-grid"></div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section class="section" id="blog-section">
+  <div class="section-head">
+    <div class="eyebrow">Blog</div>
+    <h2>Ideas sobre IA y crecimiento, sin relleno</h2>
+    <p>Artículos cortos y directos sobre automatización, IA y adquisición para empresas reales — nada de teoría genérica.</p>
+  </div>
+  <div class="grid" id="blog-grid"></div>
+</section>
+
+<!-- ============ DIAGNÓSTICO IA ============ -->
+<section class="section" id="diagnostico-section">
+  <div class="section-head">
+    <div class="eyebrow">Empieza aquí</div>
+    <h2>Diagnóstico IA gratuito</h2>
+    <p>12 preguntas para entender tu operación y mostrarte exactamente dónde la IA te ahorra más tiempo y genera más ingresos.</p>
+  </div>
+  <form class="diag-form" id="diag-form">
+    <div class="diag-progress"><span><i id="diag-bar-1"></i></span><span><i id="diag-bar-2"></i></span><span><i id="diag-bar-3"></i></span></div>
+
+    <div class="diag-step active" data-step="1">
+      <div class="field-row">
+        <div class="field"><label>Nombre</label><input required name="nombre" type="text"></div>
+        <div class="field"><label>Empresa</label><input required name="empresa" type="text"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Cargo</label><input name="cargo" type="text"></div>
+        <div class="field"><label>Ciudad</label><input name="ciudad" type="text"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>WhatsApp</label><input required name="whatsapp" type="tel"></div>
+        <div class="field"><label>Correo</label><input required name="correo" type="email"></div>
+      </div>
+    </div>
+
+    <div class="diag-step" data-step="2">
+      <div class="field-row">
+        <div class="field"><label>Sector</label><input name="sector" type="text"></div>
+        <div class="field"><label>Número de empleados</label>
+          <select name="empleados"><option>1-5</option><option>6-20</option><option>21-50</option><option>51+</option></select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Ventas mensuales aprox.</label>
+          <select name="ventas"><option>Menos de $10M COP</option><option>$10M - $50M COP</option><option>$50M - $200M COP</option><option>Más de $200M COP</option></select>
+        </div>
+        <div class="field"><label>Nivel digital actual</label>
+          <select name="nivel"><option>Básico</option><option>Intermedio</option><option>Avanzado</option></select>
+        </div>
+      </div>
+      <div class="field"><label>Herramientas que utiliza (CRM, ads, web, etc.)</label><input name="herramientas" type="text"></div>
+    </div>
+
+    <div class="diag-step" data-step="3">
+      <div class="field"><label>Problemas actuales</label><textarea name="problemas"></textarea></div>
+      <div class="field"><label>Objetivos con IA / automatización</label><textarea name="objetivos"></textarea></div>
+      <div class="field"><label>Comentarios adicionales</label><textarea name="comentarios"></textarea></div>
+    </div>
+
+    <div class="diag-success" id="diag-success" style="display:none;">
+      <h3>¡Gracias! Hemos recibido tu solicitud.</h3>
+    </div>
+
+    <div class="diag-nav" id="diag-nav">
+      <button type="button" class="btn btn-ghost" id="diag-back">Atrás</button>
+      <button type="button" class="btn btn-gold" id="diag-next">Siguiente</button>
+    </div>
+  </form>
+</section>
+
+<!-- ============ SOBRE MÍ ============ -->
+<section class="section" id="sobre-mi-section">
+  <div class="section-head">
+    <div class="eyebrow">Quién está detrás</div>
+    <h2>Harold Hennaths</h2>
+    <p>Growth Partner en IA y automatización, con base en Medellín. Ayudo a empresas locales y consultores a dejar de operar manualmente y empezar a operar con sistemas.</p>
+  </div>
+  <button class="btn btn-ghost" data-modal="sobre-mi">Ver historia completa</button>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section" id="contacto-section">
+  <div class="section-head">
+    <div class="eyebrow">Hablemos</div>
+    <h2>Agenda tu diagnóstico estratégico</h2>
+    <p>Elige el canal que prefieras — todos llegan directo a mí.</p>
+  </div>
+  <div class="hero-ctas">
+    <a class="btn btn-gold" href="https://wa.me/573103643877" target="_blank">WhatsApp directo</a>
+    <a class="btn btn-ghost" href="mailto:contacto@haroldhennaths.com">Correo</a>
+    <button class="btn btn-ghost" data-modal="diagnostico">Diagnóstico IA</button>
+    <!-- TODO Harold: si quieres agenda automática (Calendly / Google Calendar),
+         agrega aquí el enlace y lo convierto en botón + widget embebido. -->
+  </div>
+  <div class="contact-map">
+    <div class="map-pin">📍</div>
+    <div class="map-text">
+      <div class="eyebrow" style="margin-bottom:6px;">Ubicación</div>
+      <h4>Medellín, Colombia</h4>
+      <p style="color:var(--blanco-dim); font-size:0.9rem; margin-top:4px;">Atiendo clientes de forma remota en toda Colombia y Latinoamérica.</p>
+    </div>
+    <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Medell%C3%ADn%2C%20Colombia" target="_blank">Abrir en Google Maps</a>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Harold Hennaths IA — Growth Partner</div>
+  <div>Medellín, Colombia · @haroldhennaths.ia</div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<a class="fab-whatsapp" href="https://wa.me/573103643877?text=Hola%20Harold%2C%20quiero%20conocer%20c%C3%B3mo%20la%20Inteligencia%20Artificial%20puede%20ayudar%20a%20crecer%20mi%20empresa.%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20estrat%C3%A9gico." target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.39a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.02c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.58-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.27.13.44.19.51.3.07.11.07.62-.17 1.3z"/></svg>
+</a>
+
+<button class="chatbot-fab" id="chatbot-toggle" aria-label="Asistente IA">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#050803" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+
+<div class="chat-window" id="chat-window">
+  <div class="chat-header">
+    <span>Asistente · Harold IA</span>
+    <button id="chat-close">✕</button>
+  </div>
+  <div class="chat-body" id="chat-body">
+    <div class="chat-msg bot">Hola 👋 Soy el asistente de Harold. Pregúntame sobre servicios, precios, proceso o resultados.</div>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chat-input" placeholder="Escribe tu pregunta...">
+    <button id="chat-send">Enviar</button>
+  </div>
+</div>
+
+<!-- ============ MODAL SHELL ============ -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-panel" id="modal-panel">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   CONFIG — replace these with your real endpoints/keys before going live
+   ===================================================================== */
+const CONFIG = {
+  DIAGNOSTICO_WEBHOOK_URL: "https://script.google.com/macros/s/AKfycbz-C3bgvXEyVax75cdYSTBM2fnxg9iAX77Gr4tXAI7Bt54oo-PSxqorWmDyeVoySSRucA/exec", // Google Apps Script Web App — guarda las respuestas en Google Sheets
+  CHATBOT_BACKEND_URL: "",     // your own backend endpoint that calls OpenAI/Anthropic/Gemini server-side.
+  WHATSAPP_NUMBER: "573103643877"
+};
+
+/* =====================================================================
+   DATA — content for services / industries / process / results / resources
+   ===================================================================== */
+// Each entry: [título, descripción corta (tarjeta), descripción larga (modal, HTML permitido)]
+const SERVICES = [
+  ["Agentes IA","Asistentes que atienden, agendan y venden 24/7 conectados a tu WhatsApp y CRM, sin turnos ni ausencias.",
+    "<p>Diseño e implemento agentes de Inteligencia Artificial que conversan con tus clientes en WhatsApp, tu página web o Instagram — calificando el interés, respondiendo preguntas frecuentes, agendando citas y escalando a un humano solo cuando de verdad se necesita.</p><p>El agente aprende el contexto real de tu negocio: precios, horarios, políticas y tono de marca, para que cada respuesta se sienta como si la escribieras tú mismo.</p><ul><li>Disponible 24/7, sin turnos ni ausencias</li><li>Integrado a tu CRM y calendario</li><li>Escalamiento automático a un asesor humano</li></ul>"],
+  ["Automatización","Flujos que eliminan trabajo manual repetitivo entre tus herramientas — leads, facturación, seguimiento y reportes.",
+    "<p>Mapeo tu operación actual e identifico cada tarea repetitiva que hoy consume horas de tu equipo: mover leads entre plataformas, generar reportes, enviar recordatorios, actualizar hojas de cálculo.</p><p>Construyo flujos automatizados con Zapier, Make o n8n que conectan tus herramientas entre sí, para que la información se mueva sola y tu equipo se enfoque en vender y atender, no en tareas administrativas.</p>"],
+  ["CRM","Implementación y limpieza de tu CRM para que ninguna oportunidad de venta se pierda en el camino.",
+    "<p>Muchas empresas pierden ventas no por falta de leads, sino porque nadie hace seguimiento a tiempo. Implemento o reordeno tu CRM (HubSpot, o el que ya uses) con etapas claras, recordatorios automáticos y visibilidad total del embudo.</p><p>Incluye limpieza de contactos duplicados, campos estandarizados y reportes que realmente usarás cada semana.</p>"],
+  ["WhatsApp Business","Catálogos, respuestas automáticas y embudos de venta completos operando directo desde el chat.",
+    "<p>WhatsApp es hoy el canal donde tus clientes deciden comprar. Configuro tu catálogo, respuestas rápidas, etiquetas de seguimiento y flujos automatizados para que cada conversación avance hacia el cierre sin que tengas que estar pendiente todo el día.</p>"],
+  ["Meta Ads","Campañas de Instagram y Facebook con seguimiento real de retorno, no solo alcance y likes.",
+    "<p>Gestiono tus cuentas de Meta Ads con foco en resultados medibles: costo por lead, costo por venta y retorno real de inversión, no vanity metrics.</p><p>Incluye segmentación de audiencia, pruebas A/B de creativos y optimización semanal basada en datos, conectado directamente a tu CRM para saber qué campaña realmente vende.</p>"],
+  ["CRO","Optimización de tu página y embudo de ventas para convertir más visitantes con el mismo tráfico.",
+    "<p>Antes de invertir más en publicidad, optimizamos lo que ya tienes: velocidad de carga, claridad del mensaje, fricciones en el formulario y llamados a la acción. Pequeños cambios bien fundamentados en datos que aumentan tu tasa de conversión sin gastar un peso más en anuncios.</p>"],
+  ["SEO","Posicionamiento orgánico en buscadores tradicionales para que te encuentren sin pagar por cada clic.",
+    "<p>Optimización técnica y de contenido para que tu página aparezca cuando tus clientes buscan en Google lo que tú ofreces: velocidad, estructura, palabras clave locales y contenido relevante para tu sector.</p>"],
+  ["SEO GEO","Presencia en las respuestas de ChatGPT, Gemini, Perplexity y Claude — el nuevo buscador de tus clientes.",
+    "<p>Cada vez más personas le preguntan directamente a un asistente de IA en vez de buscar en Google. GEO (Generative Engine Optimization) es el trabajo de estructurar tu contenido para que esos modelos te reconozcan como fuente confiable y te mencionen en sus respuestas.</p><p>Ver la sección completa de SEO / GEO más abajo para el detalle de cada frente.</p>"],
+  ["Embudos de venta","Rutas claras desde el primer contacto hasta el cierre, sin pasos perdidos ni leads que se enfrían.",
+    "<p>Diseño el recorrido completo de tu cliente: de dónde llega, qué ve primero, qué objeciones resolvemos y en qué momento exacto se le pide la venta. Cada etapa medible, cada fuga identificada.</p>"],
+  ["Dashboards & BI","Visibilidad en tiempo real de ventas, marketing y operación en un solo lugar, sin exportar Excel a mano.",
+    "<p>Construyo dashboards conectados directamente a tus fuentes de datos (Meta Ads, CRM, ventas) para que tengas una vista clara de qué está funcionando, sin depender de reportes manuales que llegan tarde.</p>"],
+  ["E-commerce","Automatización de catálogo, pagos, inventario y logística para que tu tienda opere sin fricción.",
+    "<p>Desde la sincronización de tu catálogo hasta notificaciones automáticas de pedidos y seguimiento postventa — reduzco el trabajo manual detrás de cada venta online.</p>"],
+  ["Integraciones (Zapier / Make / APIs)","Conecto tus herramientas entre sí sin fricción, aunque hoy no se hablen entre ellas.",
+    "<p>CRM, WhatsApp, correo, hojas de cálculo, calendario, pasarelas de pago — si hoy trabajas con varias herramientas desconectadas, las integro para que la información fluya automáticamente entre todas, sin que nadie tenga que copiar y pegar.</p>"],
+];
+
+const INDUSTRIES = [
+  ["Restaurantes","Reservas, pedidos y fidelización automatizados de principio a fin, desde WhatsApp.",
+    "<p>Implemento agentes que reciben pedidos, confirman reservas y responden preguntas del menú por WhatsApp, además de flujos de fidelización que traen de vuelta a tus clientes frecuentes automáticamente.</p>"],
+  ["Clínicas & IPS","Agendamiento, confirmación y recordatorios de citas sin necesidad de personal extra en recepción.",
+    "<p>Reduce inasistencias con recordatorios automáticos, y libera a tu equipo de recepción de responder las mismas preguntas de agenda todo el día — el agente lo hace por ellos, con reglas claras de tu clínica.</p>"],
+  ["Spa & Peluquerías","Reservas por WhatsApp con disponibilidad en tiempo real y recordatorios automáticos.",
+    "<p>Tus clientas reservan directamente por chat, ven disponibilidad real y reciben recordatorio el día anterior — menos citas perdidas, menos tiempo tuyo coordinando por mensajes.</p>"],
+  ["Hoteles","Check-in digital, upsells automáticos y atención al huésped con IA antes, durante y después de la estadía.",
+    "<p>Desde la confirmación de reserva hasta recomendaciones locales y ofertas de upgrade, automatizo la comunicación con el huésped para mejorar la experiencia y aumentar el ticket promedio.</p>"],
+  ["Constructoras","Seguimiento automático de leads de alto valor para que ninguna oportunidad de venta se enfríe.",
+    "<p>Los ciclos de venta en construcción son largos — por eso automatizo el seguimiento constante a cada prospecto interesado, con recordatorios y contenido relevante en cada etapa del proceso de decisión.</p>"],
+  ["Inmobiliarias","Calificación automática de compradores interesados antes de que un asesor invierta su tiempo.",
+    "<p>El agente filtra presupuesto, zona de interés y urgencia de compra antes de pasar el contacto a tu equipo comercial, para que solo hablen con leads realmente calificados.</p>"],
+  ["Retail & Tiendas","Catálogo, ventas y atención postventa completos operando por WhatsApp e Instagram.",
+    "<p>Automatizo consultas de stock, procesos de compra y seguimiento postventa, para que tu tienda venda incluso fuera de horario de atención.</p>"],
+  ["Empresas B2B","Prospección y nutrición de leads a escala, con seguimiento consistente que ningún vendedor olvida.",
+    "<p>Diseño secuencias de contacto y nutrición automatizadas para que cada lead reciba seguimiento oportuno, sin depender de que un vendedor se acuerde de escribir.</p>"],
+  ["Panaderías & Cafés","Pedidos anticipados, catálogo de productos del día y recordatorios de pedidos especiales por WhatsApp.",
+    "<p>Automatizo la toma de pedidos anticipados (tortas, eventos, pedidos grandes), el catálogo de productos disponibles del día y los recordatorios de recogida — para que no se pierda ni un pedido por mensajes sueltos entre varias personas del equipo.</p>"],
+  ["Educación & Academias","Matrículas, información de cursos y seguimiento a estudiantes interesados, sin saturar a coordinación.",
+    "<p>El agente responde preguntas frecuentes sobre horarios, precios y metodología, califica el interés real del prospecto y agenda la llamada o visita con el asesor correcto — reduciendo la carga de coordinación académica.</p>"],
+  ["Manufactura & Industria","Seguimiento de cotizaciones y pedidos recurrentes con clientes B2B de ciclo largo.",
+    "<p>Automatizo el seguimiento a cotizaciones enviadas, recordatorios de reorden para clientes recurrentes y actualizaciones de estado de pedido, para que ningún cliente industrial quede sin respuesta mientras espera.</p>"],
+  ["Gimnasios & Centros de bienestar","Inscripciones, recordatorios de clases y recuperación de membresías inactivas de forma automática.",
+    "<p>Desde la inscripción inicial hasta recordatorios de clase y campañas automáticas para recuperar miembros que dejaron de asistir — todo corriendo solo, sin que el equipo tenga que perseguir a cada persona manualmente.</p>"],
+];
+
+const PROCESS = [
+  ["Diagnóstico","Entiendo tu operación completa: procesos actuales, herramientas que usas y los cuellos de botella reales que te están frenando.",
+    "<p>Empezamos con una revisión honesta de cómo opera tu empresa hoy: qué haces manualmente, dónde se pierden leads, qué herramientas ya tienes y cuáles te sobran. Sin esto, cualquier automatización es solo tecnología sin propósito.</p>"],
+  ["Análisis","Identifico exactamente dónde la Inteligencia Artificial y la automatización generan el mayor retorno para tu negocio específico.",
+    "<p>No todas las automatizaciones valen lo mismo. Priorizo las que más impacto tienen en tiempo ahorrado o ingresos generados, para que el proyecto se pague solo lo antes posible.</p>"],
+  ["Estrategia","Diseño el sistema completo — herramientas, flujos y responsables — antes de tocar una sola integración.",
+    "<p>Definimos juntos cómo se va a ver tu operación una vez implementado: qué hace la IA, qué sigue haciendo tu equipo, y cómo se conecta todo. Un plano claro antes de construir.</p>"],
+  ["Implementación","Construyo e integro los flujos, agentes de IA y automatizaciones definidas en la estrategia.",
+    "<p>Aquí es donde el plan se vuelve realidad: configuro cada herramienta, entreno cada agente con la información real de tu empresa y conecto todas las piezas entre sí.</p>"],
+  ["Automatización","Conecto todo el sistema para que funcione de forma continua, sin intervención manual del día a día.",
+    "<p>Pruebo cada flujo de principio a fin en condiciones reales, para asegurar que funcione de forma consistente antes de dejarlo corriendo solo.</p>"],
+  ["Optimización","Ajusto el sistema con datos reales de las primeras semanas en vivo, no con suposiciones.",
+    "<p>Reviso métricas reales de las primeras semanas — tasas de respuesta, conversión, tiempos — y afino lo que sea necesario para maximizar resultados.</p>"],
+  ["Escalamiento","Replico lo que ya funciona hacia nuevas áreas del negocio, campañas o canales.",
+    "<p>Una vez el sistema demuestra resultados, lo extendemos: nuevos canales, nuevas líneas de producto, nuevas campañas — con la misma base que ya probamos que funciona.</p>"],
+  ["Resultados","Reportes claros y periódicos de ROI, tiempo ahorrado y crecimiento generado por el sistema.",
+    "<p>Recibes reportes entendibles, sin jerga técnica, que muestran exactamente cuánto tiempo y dinero está generando la inversión — para que la decisión de seguir escalando sea obvia.</p>"],
+];
+
+const RESULTS = [
+  ["3.2x","ROI promedio en campañas de Meta Ads gestionadas con seguimiento real de conversión, no solo alcance."],
+  ["60%","Reducción promedio en tiempo operativo administrativo tras automatizar tareas repetitivas del día a día."],
+  ["24/7","Atención automatizada por agentes IA, sin turnos, ausencias ni tiempos de respuesta largos."],
+  ["+40%","Aumento en tasa de conversión de leads tras optimizar embudo, CRM y seguimiento automatizado."],
+];
+
+const RESOURCES = [
+  ["Guía","Cómo automatizar WhatsApp Business en 2026",
+    "<p>Una guía paso a paso sobre catálogos, respuestas automáticas, etiquetas de seguimiento y las integraciones mínimas que necesitas para dejar de perder ventas por falta de respuesta a tiempo.</p>"],
+  ["Caso de éxito","De 20 a 200 leads/mes con un agente IA",
+    "<p>Cómo un negocio local pasó de responder manualmente cada mensaje a tener un agente de IA calificando y agendando automáticamente, multiplicando por diez sus oportunidades mensuales.</p>"],
+  ["Plantilla","Checklist de diagnóstico digital para pymes",
+    "<p>Una lista de verificación práctica para que evalúes tú mismo qué tan automatizada está tu operación hoy, y dónde están tus mayores oportunidades de mejora.</p>"],
+  ["Artículo","SEO GEO: qué es y por qué ya te afecta",
+    "<p>Explicación clara de cómo los motores de IA generativa están cambiando la forma en que tus clientes buscan, y qué debes hacer para seguir siendo visible.</p>"],
+  ["Video","Anatomía de un embudo que convierte",
+    "<p>Un recorrido visual por las etapas de un embudo de ventas bien diseñado, desde el primer contacto hasta el cierre, con ejemplos reales de negocios locales.</p>"],
+  ["Guía","CRM: qué elegir según el tamaño de tu empresa",
+    "<p>Comparativa práctica de opciones de CRM según tu presupuesto, tamaño de equipo y nivel de complejidad de tu proceso comercial.</p>"],
+];
+
+const BLOG_POSTS = [
+  ["19 Jul 2026","Por qué tu empresa necesita un agente IA antes que más anuncios",
+    "La mayoría de negocios en Medellín invierte primero en publicidad y después piensa en cómo atender lo que esa publicidad genera. El resultado: leads que llegan y nadie responde a tiempo.",
+    "<p>Es un patrón que veo constantemente: una empresa invierte en Meta Ads, los leads empiezan a llegar, y en la primera semana todo va bien porque hay energía para responder rápido. A la tercera semana, el volumen supera la capacidad del equipo y empiezan a perderse oportunidades — no por falta de interesados, sino por falta de velocidad de respuesta.</p><p>Antes de subir el presupuesto publicitario, vale la pena preguntarse: ¿qué tan rápido respondo hoy a un lead nuevo? Si la respuesta es \"depende\", ahí está la primera automatización que hay que resolver, no la siguiente campaña.</p><p>Un agente de IA bien configurado no reemplaza tu criterio comercial — responde lo obvio al instante (horarios, precios, disponibilidad) y te avisa a ti solo cuando el lead ya está listo para hablar con una persona.</p>"],
+  ["12 Jul 2026","SEO GEO: la parte del posicionamiento que casi nadie está trabajando todavía",
+    "Cada vez más personas le preguntan directo a un asistente de IA en vez de buscar en Google. Si tu contenido no está estructurado para eso, simplemente no apareces en la conversación.",
+    "<p>Durante años, posicionar un negocio significó una cosa: aparecer en los primeros resultados de Google. Eso sigue importando, pero ya no es todo el panorama.</p><p>Hoy, una parte creciente de las búsquedas ocurre dentro de un asistente de IA: alguien le pregunta a ChatGPT o a Gemini \"¿cuál es la mejor agencia de automatización en Medellín?\" y recibe una respuesta directa, con dos o tres nombres — no una lista de diez enlaces para explorar.</p><p>Esos modelos no inventan esos nombres de la nada: los sacan de contenido bien estructurado, claro y verificable que ya existe en internet. Si tu página no está escrita pensando en eso, simplemente no entras en esa conversación, sin importar qué tan bien te vaya en Google.</p>"],
+  ["3 Jul 2026","Automatizar no es lo mismo que despedir gente — y es un malentendido caro",
+    "El miedo más común que escucho antes de automatizar un proceso es \"¿esto significa que voy a necesitar menos gente?\". Casi nunca es la pregunta correcta.",
+    "<p>Cuando automatizo un proceso — seguimiento de leads, respuestas de WhatsApp, reportes — el objetivo casi nunca es reducir el equipo. El objetivo es que ese equipo deje de gastar horas en tareas repetitivas y las use en lo que sí requiere criterio humano: negociar, resolver un caso complicado, cerrar una venta importante.</p><p>Las empresas que mejor aprovechan la automatización no son las que menos gente tienen — son las que redirigen ese tiempo ganado hacia crecimiento: más seguimiento comercial, mejor atención, más contenido, más presencia. La automatización libera tiempo; qué haces con ese tiempo es la decisión estratégica real.</p>"],
+  ["25 Jun 2026","El CRM que nadie usa no sirve de nada — así se ve uno que sí funciona",
+    "He visto empresas pagar un CRM caro durante meses sin que nadie lo llene de verdad. El problema casi nunca es la herramienta, es cómo se implementó.",
+    "<p>Un CRM no falla porque sea mala herramienta. Falla porque a alguien le tocó llenarlo a mano, después de vender, cuando ya está pensando en el siguiente cliente — así que simplemente no lo hace.</p><p>Un CRM que sí funciona se llena casi solo: los leads entran automáticamente desde WhatsApp o Meta Ads, las etapas se actualizan con reglas simples, y solo se le pide a la persona lo mínimo indispensable en el momento correcto.</p><p>Antes de cambiar de CRM o pagar por uno más caro, vale la pena revisar si el problema real es la herramienta o la falta de automatización alrededor de ella.</p>"],
+  ["15 Jun 2026","Meta Ads sin seguimiento real es dinero a ciegas",
+    "Muchas campañas se optimizan por alcance y clics, cuando la pregunta que de verdad importa es cuántas de esas personas terminaron comprando.",
+    "<p>Es fácil obsesionarse con métricas de vanidad: alcance, clics, costo por clic. Todas suenan bien en un reporte, pero ninguna te dice si la campaña generó una venta real.</p><p>El seguimiento correcto conecta cada campaña con lo que pasa después en tu CRM: cuántos leads de esa campaña específica se convirtieron en clientes, y cuánto costó cada uno de verdad. Sin esa conexión, cualquier decisión de subir o bajar presupuesto es una apuesta, no una decisión con datos.</p>"],
+];
+
+const parseBlogSlug = (i)=> `blog-${i}`;
+
+const GEO_TOPICS = [
+  ["SEO Local & Google Business","Optimización de tu ficha y presencia local para aparecer cuando alguien busca tu servicio cerca de ti.",
+    "<p>Configuro y optimizo tu perfil de Google Business, reseñas, categorías y señales locales para que aparezcas en las búsquedas de \"cerca de mí\" y en el mapa de resultados.</p>"],
+  ["LLMO — Optimización para modelos de lenguaje","Estructuro tu contenido para que los modelos de IA entiendan y confíen en tu información.",
+    "<p>Large Language Model Optimization: organizo tu contenido con la claridad y estructura que los modelos de lenguaje usan para decidir qué información citar y recomendar.</p>"],
+  ["AEO — Answer Engine Optimization","Contenido diseñado para ser la respuesta directa, no solo un resultado más en la lista.",
+    "<p>En vez de optimizar solo para clics, optimizamos para ser la respuesta que un motor de IA entrega directamente a quien pregunta.</p>"],
+  ["Optimización para ChatGPT","Presencia y estructura de contenido pensada para ser citado en respuestas de ChatGPT.",
+    "<p>Trabajo la forma en que tu marca aparece referenciada cuando un usuario le pregunta a ChatGPT sobre tu categoría de producto o servicio.</p>"],
+  ["Optimización para Gemini","Igual enfoque, adaptado a cómo Gemini de Google indexa y prioriza fuentes.",
+    "<p>Gemini prioriza fuentes distintas a las de otros modelos — ajustamos tu estrategia de contenido para cubrir ambos frentes.</p>"],
+  ["Optimización para Perplexity","Perplexity cita fuentes explícitamente — trabajamos para que esa fuente seas tú.",
+    "<p>Perplexity muestra las fuentes que usa para responder. El objetivo es que tu contenido sea una de esas fuentes citadas.</p>"],
+  ["Optimización para Claude","Estructura de contenido clara y verificable, alineada a cómo Claude prioriza información confiable.",
+    "<p>Trabajamos la claridad, precisión y estructura de tu contenido para que sea una fuente confiable también dentro del ecosistema de Anthropic.</p>"],
+  ["Búsquedas conversacionales","Contenido pensado para preguntas completas en lenguaje natural, no solo palabras clave sueltas.",
+    "<p>Cada vez más personas buscan como si hablaran con otra persona. Adaptamos tu contenido para responder ese tipo de preguntas completas, no solo palabras clave sueltas.</p>"],
+  ["Datos estructurados (Schema)","El código invisible que le dice a buscadores y modelos de IA exactamente qué es tu negocio.",
+    "<p>Implemento marcado Schema.org (negocio, servicios, preguntas frecuentes, reseñas) en tu página — información estructurada que buscadores y modelos de IA leen directamente, sin tener que \"adivinar\" de qué trata tu contenido.</p>"],
+  ["Reputación y reseñas online","Las reseñas ya no solo influyen en clientes humanos — también alimentan lo que los modelos de IA recomiendan.",
+    "<p>Diseño un flujo simple para pedir reseñas después de cada servicio y para responder las existentes, porque tanto Google como los motores de IA generativa usan el volumen y tono de tus reseñas como señal de confianza.</p>"],
+  ["Búsqueda por voz","Cada vez más búsquedas locales ocurren habladas, desde el celular o un asistente de voz.",
+    "<p>Optimizamos frases y preguntas específicas en lenguaje hablado (\"¿dónde puedo...\", \"quién hace...\") para capturar ese tipo de búsqueda, distinta a como se escribe una consulta tradicional.</p>"],
+];
+
+/* =====================================================================
+   RENDER GRIDS
+   ===================================================================== */
+function renderGrid(containerId, items, modalPrefix){
+  const el = document.getElementById(containerId);
+  el.innerHTML = items.map((item,i)=>{
+    const [title, desc] = item;
+    return `<div class="card" data-modal="${modalPrefix}-${i}">
+      <div class="idx">${String(i+1).padStart(2,'0')}</div>
+      <h3>${title}</h3>
+      <p>${desc}</p>
+      <div class="arrow">Ver detalle →</div>
+    </div>`;
+  }).join('');
+}
+renderGrid('services-grid', SERVICES, 'srv');
+renderGrid('industries-grid', INDUSTRIES, 'ind');
+renderGrid('resources-grid', RESOURCES, 'res');
+renderGrid('geo-grid', GEO_TOPICS, 'geo');
+
+// Blog gets its own card template: date, headline and excerpt instead of the generic grid layout
+document.getElementById('blog-grid').innerHTML = BLOG_POSTS.map((post,i)=>{
+  const [date, title, excerpt] = post;
+  return `<div class="card" data-modal="blog-${i}">
+    <div class="idx" style="font-family:var(--font-mono);">${date}</div>
+    <h3>${title}</h3>
+    <p>${excerpt}</p>
+    <div class="arrow">Leer artículo →</div>
+  </div>`;
+}).join('');
+
+document.getElementById('process-timeline').innerHTML = PROCESS.map((p,i)=>`
+  <div class="tl-step" data-step-index="${i}">
+    <div class="tl-num">${String(i+1).padStart(2,'0')} / ${PROCESS.length}</div>
+    <h4>${p[0]}</h4>
+    <p>${p[1]}</p>
+  </div>`).join('');
+
+// Splits a display stat like "+40%" or "3.2x" or "24/7" into
+// {prefix, number, suffix} so it can be animated from 0 to its final value.
+function parseStat(str){
+  const m = String(str).match(/^([+\-]?)(\d+(?:\.\d+)?)(.*)$/);
+  if(!m) return {prefix:'', number:null, suffix:str};
+  return {prefix:m[1], number:parseFloat(m[2]), suffix:m[3]};
+}
+
+document.getElementById('results-grid').innerHTML = RESULTS.map(r=>{
+  const {prefix, number, suffix} = parseStat(r[0]);
+  return `<div class="result-box">
+    <div class="counter" data-count="${number}" data-prefix="${prefix}" data-suffix="${suffix}">0</div>
+    <div class="label">${r[1]}</div>
+  </div>`;
+}).join('');
+
+/* =====================================================================
+   MODAL CONTENT MAP
+   ===================================================================== */
+const MODAL_CONTENT = {
+  "sobre-mi": `<div class="eyebrow">Sobre mí</div><h2>Harold Hennaths</h2>
+    <p>Soy Growth Partner especializado en Inteligencia Artificial, automatización y adquisición pagada, con base en Medellín. Trabajo con empresarios, coaches y pymes que quieren dejar de operar manualmente y empezar a operar con sistemas.</p>
+    <p>Mi metodología combina diagnóstico profundo, estrategia de crecimiento e implementación técnica real: CRM, agentes IA, Meta Ads y automatización, todo conectado.</p>
+    <p>Misión: que cada cliente sienta que su empresa piensa un paso adelante. Visión: ser el Growth Partner de referencia en IA para pymes de habla hispana.</p>`,
+  "diagnostico": `<div class="eyebrow">Diagnóstico IA</div><h2>Empecemos por entender tu operación</h2>
+    <p>Cierra este modal y completa el formulario de Diagnóstico IA en la página, o escríbeme directo por WhatsApp y lo hacemos juntos en una llamada de 15 minutos.</p>
+    <a class="btn btn-gold" href="https://wa.me/573103643877" target="_blank">Escribir por WhatsApp</a>`,
+  "contacto": `<div class="eyebrow">Contacto</div><h2>Hablemos de tu empresa</h2>
+    <p>WhatsApp: +57 310 364 3877 · Correo: contacto@haroldhennaths.com</p>`,
+  "servicios": `<div class="eyebrow">Servicios</div><h2>Todo mi stack de crecimiento</h2><p>Explora las tarjetas de servicios en la sección principal de la página para ver el detalle de cada uno.</p>`,
+  "industrias": `<div class="eyebrow">Industrias</div><h2>Sectores donde implemento</h2><p>Explora las tarjetas de industrias en la sección principal para ver casos específicos por sector.</p>`,
+  "proceso-nav": `<div class="eyebrow">Proceso</div><h2>Ocho etapas, un solo método</h2><p>Revisa la línea de tiempo completa en la sección Proceso de la página.</p>`,
+  "geo-nav": `<div class="eyebrow">SEO / GEO</div><h2>Que te encuentren personas y modelos de IA</h2><p>Explora las tarjetas de la sección SEO / GEO más abajo en la página para ver cada frente en detalle.</p>`,
+  "resultados-nav": `<div class="eyebrow">Resultados</div><h2>Números reales</h2><p>Consulta los indicadores en la sección Resultados de la página.</p>`,
+  "recursos": `<div class="eyebrow">Recursos</div><h2>Centro de recursos</h2><p>Explora guías, casos de éxito y plantillas en la sección de Recursos.</p>`,
+  "blog-nav": `<div class="eyebrow">Blog</div><h2>Ideas sobre IA y crecimiento</h2><p>Explora los artículos más recientes en la sección de Blog, más abajo en la página.</p>`,
+};
+SERVICES.forEach((s,i)=>{ MODAL_CONTENT[`srv-${i}`] = `<div class="eyebrow">Servicio ${String(i+1).padStart(2,'0')}</div><h2>${s[0]}</h2>${s[2]}<a class="btn btn-gold" href="https://wa.me/573103643877?text=Hola%20Harold%2C%20quiero%20saber%20m%C3%A1s%20sobre%20${encodeURIComponent(s[0])}" target="_blank">Preguntar por este servicio</a>`; });
+INDUSTRIES.forEach((s,i)=>{ MODAL_CONTENT[`ind-${i}`] = `<div class="eyebrow">Industria</div><h2>${s[0]}</h2>${s[2]}<a class="btn btn-gold" href="https://wa.me/573103643877?text=Hola%20Harold%2C%20tengo%20una%20empresa%20del%20sector%20${encodeURIComponent(s[0])}" target="_blank">Hablar sobre mi sector</a>`; });
+RESOURCES.forEach((s,i)=>{ MODAL_CONTENT[`res-${i}`] = `<div class="eyebrow">${s[0]}</div><h2>${s[1]}</h2>${s[2]}<a class="btn btn-ghost" href="https://wa.me/573103643877" target="_blank">Pedir este recurso</a>`; });
+GEO_TOPICS.forEach((s,i)=>{ MODAL_CONTENT[`geo-${i}`] = `<div class="eyebrow">SEO / GEO</div><h2>${s[0]}</h2>${s[2]}<a class="btn btn-gold" href="https://wa.me/573103643877?text=Hola%20Harold%2C%20quiero%20saber%20m%C3%A1s%20sobre%20${encodeURIComponent(s[0])}" target="_blank">Preguntar sobre esto</a>`; });
+BLOG_POSTS.forEach((post,i)=>{
+  const [date, title, excerpt, body] = post;
+  MODAL_CONTENT[`blog-${i}`] = `<div class="eyebrow">Blog · ${date}</div><h2>${title}</h2>${body}<a class="btn btn-gold" href="https://wa.me/573103643877?text=Hola%20Harold%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20${encodeURIComponent(title)}" target="_blank">Hablar sobre esto</a>`;
+});
+
+/* =====================================================================
+   MODAL SYSTEM (SPA behavior: no navigation, preserves scroll position)
+   ===================================================================== */
+const overlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+let lastScrollY = 0;
+
+// Wrapped because sandboxed preview environments (e.g. srcdoc iframes) throw
+// SecurityError on pushState — this keeps the modal working everywhere,
+// and still gives real deployments (Netlify etc.) proper URL/back-button sync.
+function safePushState(state, url){
+  try { history.pushState(state, '', url); } catch(err) { /* no-op in sandboxed previews */ }
+}
+
+function openModal(key){
+  if(!MODAL_CONTENT[key]) return;
+  lastScrollY = window.scrollY;
+  modalContent.innerHTML = MODAL_CONTENT[key];
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  safePushState({modal:key}, `#${key}`);
+}
+function closeModal(){
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  safePushState(null, ' ');
+  window.scrollTo({top:lastScrollY});
+}
+document.addEventListener('click', (e)=>{
+  const trigger = e.target.closest('[data-modal]');
+  if(trigger){ openModal(trigger.dataset.modal); }
+});
+document.getElementById('modal-close').addEventListener('click', closeModal);
+overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeModal(); });
+window.addEventListener('popstate', closeModal);
+
+/* mobile menu */
+const mobileMenu = document.getElementById('mobile-menu');
+document.getElementById('menu-toggle').addEventListener('click', ()=> mobileMenu.classList.add('open'));
+document.getElementById('mobile-menu-close').addEventListener('click', ()=> mobileMenu.classList.remove('open'));
+mobileMenu.querySelectorAll('button[data-modal]').forEach(b=> b.addEventListener('click', ()=> mobileMenu.classList.remove('open')));
+
+/* header scroll state */
+const headerEl = document.getElementById('site-header');
+window.addEventListener('scroll', ()=>{
+  headerEl.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* =====================================================================
+   COUNTERS (hero stats + results)
+   ===================================================================== */
+function animateNumber(el, target, suffix='', prefix=''){
+  let current = 0;
+  const isFloat = target % 1 !== 0;
+  const duration = 1400, start = performance.now();
+  function tick(now){
+    const p = Math.min((now-start)/duration, 1);
+    const eased = 1 - Math.pow(1-p, 3);
+    current = target*eased;
+    el.textContent = prefix + (isFloat ? current.toFixed(1) : Math.round(current)) + suffix;
+    if(p<1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counterObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    const el = entry.target;
+    if(el.dataset.count && el.dataset.count !== 'null'){
+      animateNumber(el, parseFloat(el.dataset.count), el.dataset.suffix||'', el.dataset.prefix||'');
+    } else if(el.dataset.count === 'null'){
+      el.textContent = el.dataset.suffix; // non-numeric stat, show as-is
+    }
+    counterObserver.unobserve(el);
+  });
+}, {threshold:0.6});
+document.querySelectorAll('[data-count]').forEach(el=>counterObserver.observe(el));
+
+/* timeline reveal */
+const tlObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+}, {threshold:0.4});
+document.querySelectorAll('.tl-step').forEach(el=>tlObserver.observe(el));
+
+/* =====================================================================
+   DIAGNOSTIC FORM (3 steps) — posts nombre, empresa, cargo, ciudad, whatsapp,
+   correo, sector y problemas como JSON al Web App de Google Apps Script
+   configurado en CONFIG.DIAGNOSTICO_WEBHOOK_URL, que guarda cada envío en
+   Google Sheets.
+   ===================================================================== */
+(function(){
+  try {
+  const form = document.getElementById('diag-form');
+  const steps = form.querySelectorAll('.diag-step');
+  const bars = [document.getElementById('diag-bar-1'), document.getElementById('diag-bar-2'), document.getElementById('diag-bar-3')];
+  const nextBtn = document.getElementById('diag-next');
+  const backBtn = document.getElementById('diag-back');
+  const nav = document.getElementById('diag-nav');
+  let step = 1;
+
+  function render(){
+    steps.forEach(s=> s.classList.toggle('active', +s.dataset.step === step));
+    bars.forEach((b,i)=> { if(b) b.style.width = (i < step ? '100%' : '0%'); });
+    backBtn.style.visibility = step===1 ? 'hidden' : 'visible';
+    nextBtn.textContent = step===3 ? 'Enviar diagnóstico' : 'Siguiente';
+  }
+  backBtn.addEventListener('click', ()=>{ if(step>1){ step--; render(); } });
+  nextBtn.addEventListener('click', async ()=>{
+    const currentFields = form.querySelector(`.diag-step[data-step="${step}"]`).querySelectorAll('[required]');
+    for(const f of currentFields){ if(!f.value){ f.focus(); return; } }
+    if(step < 3){ step++; render(); return; }
+
+    const allData = Object.fromEntries(new FormData(form).entries());
+    // Solo estos 8 campos se envían a Google Sheets, como se pidió.
+    const payload = {
+      nombre: allData.nombre || '',
+      empresa: allData.empresa || '',
+      cargo: allData.cargo || '',
+      ciudad: allData.ciudad || '',
+      whatsapp: allData.whatsapp || '',
+      correo: allData.correo || '',
+      sector: allData.sector || '',
+      problemas: allData.problemas || ''
+    };
+
+    nextBtn.disabled = true;
+    nextBtn.textContent = 'Enviando...';
+
+    try {
+      // mode:'no-cors' + Content-Type text/plain evita el preflight CORS que
+      // Google Apps Script no maneja por defecto en despliegues estándar. La
+      // respuesta queda "opaca" (no se puede leer), así que si fetch no
+      // lanza error asumimos que la solicitud llegó correctamente a Sheets.
+      await fetch(CONFIG.DIAGNOSTICO_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+      form.style.display = 'none';
+      document.getElementById('diag-success').style.display = 'block';
+      nav.style.display = 'none';
+      form.reset();
+      step = 1;
+      render();
+    } catch(err) {
+      console.error('Error enviando el diagnóstico a Google Sheets:', err);
+      nextBtn.disabled = false;
+      nextBtn.textContent = 'Enviar diagnóstico';
+      alert('Hubo un problema enviando el formulario. Intenta de nuevo en un momento.');
+    }
+  });
+  render();
+  } catch(err) { console.error("Widget error:", err); }
+})();
+
+/* =====================================================================
+   CHATBOT SHELL
+   NOTE: This is a front-end shell only. To make it actually intelligent,
+   point CONFIG.CHATBOT_BACKEND_URL at your own server-side endpoint that
+   calls the OpenAI / Anthropic / Gemini API — an API key must NEVER be
+   placed directly in this HTML file, since it would be publicly visible.
+   That backend can also hold your RAG knowledge base and session memory.
+   ===================================================================== */
+(function(){
+  try {
+  const toggle = document.getElementById('chatbot-toggle');
+  const win = document.getElementById('chat-window');
+  const closeBtn = document.getElementById('chat-close');
+  const body = document.getElementById('chat-body');
+  const input = document.getElementById('chat-input');
+  const send = document.getElementById('chat-send');
+
+  toggle.addEventListener('click', ()=> win.classList.toggle('open'));
+  closeBtn.addEventListener('click', ()=> win.classList.remove('open'));
+
+  function addMsg(text, who){
+    const div = document.createElement('div');
+    div.className = `chat-msg ${who}`;
+    div.textContent = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  const FALLBACK_ANSWERS = [
+    [/precio|costo|cu[aá]nto/i, "Los precios dependen del alcance del proyecto. Cuéntame tu sector y objetivo y te doy un rango, o agenda tu Diagnóstico IA gratuito."],
+    [/servicio/i, "Trabajo agentes IA, automatización, CRM, Meta Ads, CRO y SEO GEO. ¿Cuál te interesa más?"],
+    [/proceso|c[oó]mo trabajas/i, "Mi proceso tiene 8 etapas: diagnóstico, análisis, estrategia, implementación, automatización, optimización, escalamiento y resultados."],
+    [/whatsapp/i, "Puedes escribirle a Harold directo aquí: https://wa.me/573103643877"],
+  ];
+
+  async function respond(text){
+    if(CONFIG.CHATBOT_BACKEND_URL){
+      try{
+        const r = await fetch(CONFIG.CHATBOT_BACKEND_URL, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({message:text})
+        });
+        const json = await r.json();
+        addMsg(json.reply || "No pude procesar eso, intenta de nuevo.", 'bot');
+        return;
+      }catch(err){ console.error(err); }
+    }
+    const match = FALLBACK_ANSWERS.find(([re])=> re.test(text));
+    addMsg(match ? match[1] : "Gracias por tu mensaje. Para una respuesta detallada, escríbele a Harold por WhatsApp o completa el Diagnóstico IA.", 'bot');
+  }
+
+  function handleSend(){
+    const val = input.value.trim();
+    if(!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    setTimeout(()=> respond(val), 400);
+  }
+  send.addEventListener('click', handleSend);
+  input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') handleSend(); });
+  } catch(err) { console.error("Widget error:", err); }
+})();
+
+/* =====================================================================
+   3D NEURAL BRAIN — dependency-free Canvas 2D implementation.
+   No WebGL, no external library, no CDN: hand-rolled 3D rotation +
+   perspective projection drawn straight to a 2D canvas context. This
+   guarantees it renders in any browser, any file preview, any host.
+   ===================================================================== */
+(function(){
+  try {
+  const canvas = document.getElementById('brain-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, DPR;
+
+  function resize(){
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    canvas.style.width = W+'px'; canvas.style.height = H+'px';
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    buildStarfield();
+  }
+
+  // ---- Ambient scattered gold dots across the whole dark background ----
+  // Independent from the brain point cloud — gives the page depth even
+  // far away from the brain itself. Regenerated on resize to cover the
+  // full viewport, with a lighter density on small/mobile screens.
+  let stars = [];
+  function buildStarfield(){
+    const density = W < 640 ? 0.00009 : 0.00014;
+    const count = Math.round(W*H*density);
+    stars = Array.from({length: count}, ()=>({
+      x: Math.random()*W,
+      y: Math.random()*H,
+      r: Math.random()*1.3 + 0.4,
+      baseAlpha: Math.random()*0.35 + 0.08,
+      phase: Math.random()*Math.PI*2,
+      speed: Math.random()*0.4 + 0.15
+    }));
+  }
+
+  // Lower detail on small screens: fewer nodes + fewer connections, since
+  // phones are where most of the Meta Ads traffic will land.
+  const isSmallScreen = window.innerWidth < 640;
+  const NODE_COUNT = isSmallScreen ? 340 : 620;
+  const MAX_PER_NODE_CFG = isSmallScreen ? 2 : 3;
+
+  resize();
+  window.addEventListener('resize', resize);
+
+  // ---- Build a brain-like point cloud (two lobes) in 3D space ----
+  const nodes = [];
+  function lobePoint(sideSign){
+    const theta = Math.random()*Math.PI*2;
+    const phi = Math.acos((Math.random()*2)-1);
+    const r = 2.1 + Math.sin(theta*6)*0.22 + Math.cos(phi*8)*0.16 + (Math.random()-0.5)*0.18;
+    return {
+      x: sideSign*0.55 + r*Math.sin(phi)*Math.cos(theta)*0.85,
+      y: r*Math.cos(phi)*0.95,
+      z: r*Math.sin(phi)*Math.sin(theta)*0.7
+    };
+  }
+  for(let i=0;i<NODE_COUNT;i++) nodes.push(lobePoint(i%2===0 ? 1 : -1));
+
+  // ---- Precompute short-range connections between nearby nodes ----
+  const edges = [];
+  const MAX_DIST = 0.62, MAX_PER_NODE = MAX_PER_NODE_CFG;
+  for(let i=0;i<nodes.length;i++){
+    let count = 0;
+    for(let j=i+1;j<nodes.length && count<MAX_PER_NODE;j++){
+      const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y, dz=nodes[i].z-nodes[j].z;
+      const d = Math.sqrt(dx*dx+dy*dy+dz*dz);
+      if(d < MAX_DIST){ edges.push([i,j]); count++; }
+    }
+  }
+
+  // ---- Mouse parallax ----
+  let mouseX = 0, mouseY = 0;
+  window.addEventListener('mousemove', (e)=>{
+    mouseX = (e.clientX/window.innerWidth - 0.5);
+    mouseY = (e.clientY/window.innerHeight - 0.5);
+  });
+
+  // ---- Rotation + perspective projection helpers ----
+  const FOCAL = 480;      // focal length: bigger = less perspective distortion
+  const CAM_DIST = 6.2;   // camera distance from origin along z
+  const SCALE = 150;      // world-to-pixel base scale
+
+  function project(p, rotY, rotX){
+    // rotate around Y
+    let x = p.x*Math.cos(rotY) - p.z*Math.sin(rotY);
+    let z = p.x*Math.sin(rotY) + p.z*Math.cos(rotY);
+    let y = p.y;
+    // rotate around X
+    let y2 = y*Math.cos(rotX) - z*Math.sin(rotX);
+    let z2 = y*Math.sin(rotX) + z*Math.cos(rotX);
+    const depth = z2 + CAM_DIST;
+    const f = FOCAL/(FOCAL + depth*SCALE*0.001*FOCAL*0 + depth*140); // perspective divisor
+    return {
+      sx: x*SCALE*f,
+      sy: y2*SCALE*f,
+      depth
+    };
+  }
+
+  let t0 = performance.now();
+  let running = true;
+  document.addEventListener('visibilitychange', ()=>{
+    running = !document.hidden;
+    if(running) requestAnimationFrame(frame);
+  });
+
+  function frame(now){
+    if(!running) return;
+    const t = (now - t0)/1000;
+    const rotY = t*0.12 + mouseX*0.5;
+    const rotX = Math.sin(t*0.2)*0.1 + mouseY*0.25;
+
+    ctx.clearRect(0,0,W,H);
+
+    // scattered opaque gold dots across the full dark background
+    for(const s of stars){
+      const twinkle = 0.5 + 0.5*Math.sin(t*s.speed + s.phase);
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(200,168,75,${(s.baseAlpha*(0.5+0.5*twinkle)).toFixed(3)})`;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fill();
+    }
+
+    // ambient gold glow behind the brain
+    const cx = W/2, cy = H*0.42;
+    const grad = ctx.createRadialGradient(cx,cy,0,cx,cy,Math.min(W,H)*0.5);
+    grad.addColorStop(0,'rgba(200,168,75,0.16)');
+    grad.addColorStop(1,'rgba(200,168,75,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0,0,W,H);
+
+    // project all nodes once per frame
+    const proj = nodes.map(p => project(p, rotY, rotX));
+
+    // draw edges (neural connections)
+    ctx.lineWidth = 1;
+    for(const [i,j] of edges){
+      const a = proj[i], b = proj[j];
+      const avgDepth = (a.depth + b.depth)/2;
+      const alpha = Math.max(0.04, Math.min(0.32, 0.34 - avgDepth*0.03));
+      ctx.strokeStyle = `rgba(200,168,75,${alpha})`;
+      ctx.beginPath();
+      ctx.moveTo(cx + a.sx, cy + a.sy);
+      ctx.lineTo(cx + b.sx, cy + b.sy);
+      ctx.stroke();
+    }
+
+    // draw nodes (neurons) with glow, brighter/bigger when closer to camera
+    for(const p of proj){
+      const size = Math.max(0.8, 2.6 - p.depth*0.18);
+      const alpha = Math.max(0.25, Math.min(1, 1.1 - p.depth*0.06));
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(240,209,140,${alpha})`;
+      ctx.shadowColor = 'rgba(240,209,140,0.9)';
+      ctx.shadowBlur = 6;
+      ctx.arc(cx + p.sx, cy + p.sy, size, 0, Math.PI*2);
+      ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  } catch(err) { console.error("Widget error:", err); }
+})();
+</script>
+</body>
+</html>
