@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cute-pegasus-b17961.netlify.app/sitemap.xml
